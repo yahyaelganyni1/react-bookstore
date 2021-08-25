@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { BrowserRouter as Link } from 'react-router-dom';
 
 function Book({ category, bookName, Author }) {
@@ -9,13 +10,13 @@ function Book({ category, bookName, Author }) {
       <span>{Author}</span>
       <ul>
         <li>
-          <Link>Comment</Link>
+          <Link to="/">Comment</Link>
         </li>
         <li>
-          <Link>Remove</Link>
+          <Link to="/">Remove</Link>
         </li>
         <li>
-          <Link>Edit</Link>
+          <Link to="/">Edit</Link>
         </li>
       </ul>
     </div>
@@ -23,3 +24,15 @@ function Book({ category, bookName, Author }) {
 }
 
 export default Book;
+
+Book.propTypes = {
+  category: PropTypes.string,
+  bookName: PropTypes.string,
+  Author: PropTypes.string,
+};
+
+Book.defaultProps = {
+  category: PropTypes.string,
+  bookName: PropTypes.string,
+  Author: PropTypes.string,
+};
